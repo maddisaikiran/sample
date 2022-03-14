@@ -1,0 +1,18 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.model.Friend;
+
+
+
+public interface FriendService {
+	Friend createRequest(Friend friend);
+	//Friend updateRequest(Friend friend, int id);
+	List<Friend> getAllFriendRequests();
+	Friend getFriendById(int id);
+	
+	List<Friend> findFriendsByUserId(int id);
+	
+	List<Friend> getUserByFriendByOrderStatusById(int id);
+}

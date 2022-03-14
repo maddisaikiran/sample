@@ -1,0 +1,10 @@
+package com.example.demo.constants;
+
+public class Constants {
+
+	private static final int statusCode = 201;
+	private static final String message = "User created";
+	public static int getStatuscode() {
+		return statusCode;
+	}
+}

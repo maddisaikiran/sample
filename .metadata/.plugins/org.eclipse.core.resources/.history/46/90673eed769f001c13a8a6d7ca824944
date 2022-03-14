@@ -1,0 +1,17 @@
+package com.example.demo.constants;
+
+public class Constants {
+
+	private static int statusCode = 201;
+	private static String message = "User created";
+	
+	public static int getStatusCode() {
+		return statusCode;
+	}
+	public static String getMessage() {
+		return message;
+	}
+	
+	
+	
+}

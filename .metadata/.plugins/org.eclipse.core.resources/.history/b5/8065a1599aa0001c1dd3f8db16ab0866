@@ -1,0 +1,8 @@
+package com.example.demo.service;
+
+import com.example.demo.model.Friend;
+
+
+public interface FriendService {
+	Friend createRequest(Friend friend);
+}

@@ -1,0 +1,45 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.stereotype.Component;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@Component
+@Data
+@Entity
+@Table(name = "user", uniqueConstraints = @UniqueConstraint(
+		name="uk_sample2_fullName_emailId_mobile",columnNames= {"fullName","emailId","mobile"}))
+        
+
+
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	@NotNull
+	private String fullName;
+	
+	@NotNull
+	private long mobile;
+	@NotNull
+	private String emailId;
+	@NotNull
+	private String password;
+	private boolean userStatus;
+}

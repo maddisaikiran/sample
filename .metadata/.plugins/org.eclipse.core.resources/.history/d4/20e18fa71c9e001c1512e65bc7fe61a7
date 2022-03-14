@@ -1,0 +1,16 @@
+package com.example.demo.util;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import com.example.demo.dto.Response;
+
+public class ResponseUtil {
+
+	public static ResponseEntity<HttpStatusResponse> prepareHttpResponse(final int statusCode, final Object payload, final String mesage){
+		Response responseDTO = new Response(statusCode, payload, mesage);
+		
+		
+		return new ResponseEntity<Response>(responseDTO, HttpStatus.OK);
+	}
+}

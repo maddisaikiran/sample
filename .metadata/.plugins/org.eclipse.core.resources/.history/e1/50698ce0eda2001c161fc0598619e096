@@ -1,0 +1,21 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.Friend;
+import com.example.demo.model.User;
+
+
+@Service
+public interface FriendService {
+	Friend createRequest(Friend friend);
+	//Friend updateRequest(Friend friend, int id);
+	List<Friend> getAllFriendRequests();
+	Friend getFriendById(int id);
+	
+	List<Friend> findFriendsByUserId(int id);
+	
+	List<User> getUserByFriendByOrderStatusById(int id);
+}

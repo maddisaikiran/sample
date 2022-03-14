@@ -1,0 +1,23 @@
+package com.example.demo.respository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.User;
+
+
+
+@Repository
+public interface UserRespository extends JpaRepository <User, Integer>{
+	
+	User findByEmailId(String emailId);
+	User findByEmailIdAndPassword(String emailId, String password) ;
+	
+	
+	@Query("select u from User u left join u.friend f where f.status.id=2 and f.user.id=(:userId) or f.userId=(:userId)")
+	List<User> findUserByFriendByOrderStatusById(Integer userId);
+
+}
